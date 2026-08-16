@@ -38,6 +38,11 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+/* Mobile Safe Area Padding */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 8px);
+}
+
 /* Custom peaceful scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

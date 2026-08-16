@@ -10,6 +10,7 @@ import { StoreVisit } from './components/StoreVisit';
 import { ProductDetailModal } from './components/ProductDetailModal';
 import { InquiryDrawer } from './components/InquiryDrawer';
 import { Footer } from './components/Footer';
+import { MobileBottomDock } from './components/MobileBottomDock';
 import {
   MetalRates,
   Product,
@@ -176,7 +177,7 @@ export default function App() {
       />
 
       {/* Main Content Area */}
-      <main className="flex-1">
+      <main className="flex-1 pb-24 md:pb-0">
         {activeTab === 'home' && (
           <>
             {/* Cinematic Hero */}
@@ -292,19 +293,19 @@ export default function App() {
         metalRates={metalRates}
       />
 
-      {/* Floating Quick Action Buttons */}
-      <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3">
+      {/* Floating Quick Action Buttons (elevated above dock on mobile) */}
+      <div className="fixed bottom-24 md:bottom-6 right-4 md:right-6 z-40 flex flex-col items-end gap-3 pointer-events-auto">
         {/* WhatsApp Direct Chat Float */}
         <a
           id="floating-whatsapp-btn"
           href={`https://wa.me/${STORE_INFO.whatsappNumber}?text=Namaste%20Laxmi%20Jewellers%20Sariya,%20I%20have%20an%20inquiry%20regarding%20jewellery%20and%20rates.`}
           target="_blank"
           rel="noopener noreferrer"
-          className="p-3.5 rounded-full bg-[#15803D] hover:bg-[#166534] text-[#FFFFFF] shadow-2xl flex items-center justify-center transition-transform hover:scale-110 border border-[#86EFAC]/40"
+          className="p-3 sm:p-3.5 rounded-full bg-[#15803D] hover:bg-[#166534] text-[#FFFFFF] shadow-2xl flex items-center justify-center transition-transform hover:scale-110 border border-[#86EFAC]/40"
           title="Direct WhatsApp with Laxmi Jewellers Sariya"
           aria-label="Direct WhatsApp"
         >
-          <MessageCircle className="w-6 h-6" />
+          <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6" />
         </a>
 
         {/* Scroll To Top */}
@@ -312,7 +313,7 @@ export default function App() {
           <button
             id="scroll-to-top-btn"
             onClick={scrollToTop}
-            className="p-3 rounded-full bg-[#FFFFFF] hover:bg-[#FAF6F0] text-[#1C1917] hover:text-[#800020] border border-[rgba(184,147,76,0.3)] shadow-xl transition-all cursor-pointer"
+            className="p-2.5 sm:p-3 rounded-full bg-[#FFFFFF] hover:bg-[#FAF6F0] text-[#1C1917] hover:text-[#800020] border border-[rgba(184,147,76,0.3)] shadow-xl transition-all cursor-pointer"
             title="Scroll to Top"
             aria-label="Scroll to Top"
           >
@@ -320,6 +321,15 @@ export default function App() {
           </button>
         )}
       </div>
+
+      {/* Mobile Fixed Bottom Dock Navigation */}
+      <MobileBottomDock
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        inquiryItems={inquiryItems}
+        setIsInquiryOpen={setIsInquiryOpen}
+        metalRates={metalRates}
+      />
 
       {/* Footer */}
       <Footer setActiveTab={setActiveTab} />
