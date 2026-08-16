@@ -1,0 +1,6 @@
+{
+  "name": "Laxmi Jewellers Sariya",
+  "description": "Exquisite gold, bridal, and fine silver jewellery by Laxmi Jewellers Sariya (Shri Sadhuram Sonar Ji Ki Dukan) with live metal rates, interactive collection showcase, hallmark calculator, and heritage story.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,193 @@
+@import "tailwindcss";
+
+:root {
+  --ivory-bg: #FAF8F5;
+  --ivory-surface: #FFFFFF;
+  --ivory-card: #FDFBF8;
+  --ivory-subtle: #F4EFEB;
+  --gold-primary: #B8934C;
+  --gold-dark: #8F6D29;
+  --gold-light: #DFC489;
+  --gold-border: rgba(184, 147, 76, 0.22);
+  --gold-border-strong: rgba(184, 147, 76, 0.5);
+  --charcoal-heading: #1C1917;
+  --charcoal-body: #44403C;
+  --charcoal-muted: #78716C;
+}
+
+@layer base {
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #FAF8F5;
+    color: #292524;
+    background-image: 
+      radial-gradient(circle at 10% 10%, rgba(184, 147, 76, 0.03) 0%, transparent 40%),
+      radial-gradient(circle at 90% 90%, rgba(184, 147, 76, 0.03) 0%, transparent 40%);
+  }
+}
+
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+.font-playfair {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Custom peaceful scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F4EFEB;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D9CFC4;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B8934C;
+}
+
+/* Peaceful Luxury Gold Accents */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #8A6720 0%, #B8934C 50%, #684C12 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-text-light {
+  background: linear-gradient(135deg, #FFFBEB 0%, #DFC489 50%, #B8934C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Sober Luxury Cards */
+.sober-card {
+  background: #FFFFFF;
+  border: 1px solid rgba(184, 147, 76, 0.2);
+  box-shadow: 0 4px 20px -2px rgba(90, 70, 50, 0.05);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sober-card:hover {
+  border-color: rgba(184, 147, 76, 0.5);
+  box-shadow: 0 12px 30px -4px rgba(90, 70, 50, 0.1), 0 0 15px rgba(184, 147, 76, 0.08);
+  transform: translateY(-2px);
+}
+
+.sober-glass {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.sober-dark-glass {
+  background: rgba(28, 25, 23, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Luxury Action Buttons */
+.btn-sober-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 26px;
+  background: #B8934C;
+  color: #FFFFFF;
+  border: 1px solid #B8934C;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: 'Montserrat', sans-serif;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(184, 147, 76, 0.25);
+}
+
+.btn-sober-gold:hover {
+  background: #9E7728;
+  border-color: #9E7728;
+  box-shadow: 0 6px 20px rgba(184, 147, 76, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn-sober-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 26px;
+  background: transparent;
+  color: #8A6720;
+  border: 1px solid #B8934C;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: 'Montserrat', sans-serif;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.btn-sober-outline:hover {
+  background: #B8934C;
+  color: #FFFFFF;
+  box-shadow: 0 4px 16px rgba(184, 147, 76, 0.2);
+  transform: translateY(-1px);
+}
+
+/* Ticker Animation */
+@keyframes soberTicker {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-sober-marquee {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: soberTicker 34s linear infinite;
+}
+
+.animate-sober-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Subtle Shimmer */
+@keyframes peacefulShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.peaceful-shimmer {
+  background: linear-gradient(90deg, rgba(184, 147, 76, 0.05) 0%, rgba(184, 147, 76, 0.2) 50%, rgba(184, 147, 76, 0.05) 100%);
+  background-size: 200% 100%;
+  animation: peacefulShimmer 6s infinite linear;
+}
+
+/* Delicate filigree patterns */
+.jaali-pattern {
+  background-color: #FAF8F5;
+  background-image: radial-gradient(#DFC489 0.75px, transparent 0.75px), radial-gradient(#DFC489 0.75px, #FAF8F5 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
